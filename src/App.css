@@ -1,38 +1,379 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Barlow:wght@600;800;900&family=Caveat:wght@400;500;600&family=Dancing+Script:wght@400;500;600&family=Fraunces:wght@600;700;900&family=Inter:wght@400;700;800&family=Josefin+Sans:wght@300&family=League+Spartan:wght@500;600;700&family=Lobster&family=Merriweather:ital,wght@0,300;1,300;1,700;1,900&family=Nunito+Sans:wght@400;600;800&family=Outfit:wght@400;700&family=Rakkas&family=Roboto+Condensed:ital,wght@0,300;1,300&family=Rubik:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Barlow:wght@600;800;900&family=Caveat:wght@400;500;600&family=Dancing+Script:wght@400;500;600&family=Fraunces:wght@600;700;900&family=Inter:wght@400;700;800&family=Josefin+Sans:wght@300&family=League+Spartan:wght@500;600;700&family=Lobster&family=Marhey:wght@300&family=Merriweather:ital,wght@0,300;1,300;1,700;1,900&family=Nunito+Sans:wght@400;600;800&family=Outfit:wght@400;700&family=Rakkas&family=Roboto+Condensed:ital,wght@0,300;1,300&family=Rubik:wght@400;500;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none !important;
+  color: black;
+}
+h2 {
+  font-family: "Rakkas", cursive;
+  color: #c6c9ac;
+}
+h1 {
+  font-family: "Rakkas", cursive;
+  color: #616161;
+  font-size: 50px;
+}
+
+p {
+  font-family: "Marhey", cursive;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(54, 54, 54);
+}
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.container {
+  padding: 20px 150px;
+}
+
+.home {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+ul {
+  list-style: none;
+}
+img {
+  user-select: none;
+}
+.main {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.main .imge {
+  width: 100%;
+  height: 100%;
+}
+.main .imge img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+.content-cross {
+  position: static;
+}
+.circl-text {
+  position: absolute;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
   color: white;
+  background-color: rgb(27, 27, 27);
+  font-size: 10px;
+  text-align: center;
+  vertical-align: middle;
+  text-align-last: center;
+  margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.hero {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  gap: 50px;
+  text-align: right;
+}
+.vid-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.vid-wrap video {
+  height: 100%;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.contet-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  text-align: center;
+}
+.contet-wrap h2 {
+  font-size: 70px;
+  font-weight: 900;
+}
+.txt-show {
+  padding: 50px 0;
+}
+.txt-show div h2 {
+  font-size: 100px;
+}
+.my-God-love {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mess {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+}
+.revers {
+  flex-direction: row-reverse;
+}
+.mess h2 {
+  font-family: "Marhey", cursive;
+
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+  color: rgb(145, 145, 145);
+}
+.mess .txt {
+  padding: 20px;
+}
+.full {
+  position: relative;
+  padding: 40px 50px;
+  height: 40vh;
+  margin: 150px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  background-image: url(../src/prallex-img/9e694a4f533a7a442edb0f6830eb0a13.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.full::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.336);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.full h2 {
+  font-family: "Rakkas", cursive;
+  font-size: 50px;
+  font-weight: 100;
+  color: rgb(255, 255, 255);
+  z-index: 5;
+}
+.foter {
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.foter p {
+  font-size: 15px;
+}
+
+@media only screen and (max-width: 1280px) {
+  .container {
+    padding: 20px 100px;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media only screen and (max-width: 1150px) {
+  .container {
+    padding: 20px 80px;
   }
+  .hero {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    gap: 50px;
+    text-align: right;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .container {
+    padding: 20px 30px;
+  }
+  .hero {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    gap: 50px;
+    text-align: right;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .main .imge {
+    min-width: 200px;
+    height: 100%;
+  }
+  h2 {
+    font-family: "Rakkas", cursive;
+    color: #c6c9ac;
+  }
+  h1 {
+    font-family: "Rakkas", cursive;
+    color: #616161;
+    font-size: 35px;
+  }
+
+  p {
+    font-family: "Marhey", cursive;
+    font-size: 19px;
+    font-weight: 500;
+    color: rgb(54, 54, 54);
+  }
+
+  .contet-wrap h2,
+  .txt-show div h2 {
+    font-size: 55px;
+  }
+
+  .mess h2 {
+    font-size: 35px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .container {
+    padding: 20px;
+  }
+  .main .content {
+    min-width: 100px;
+    height: 100%;
+    padding: 0 5px;
+  }
+  .content-cross {
+    width: 100% !important;
+  }
+  .content-cross img {
+    width: 100% !important;
+    object-fit: cover;
+  }
+  h2 {
+    font-family: "Rakkas", cursive;
+    color: #c6c9ac;
+  }
+  h1 {
+    font-family: "Rakkas", cursive;
+    color: #616161;
+    font-size: 35px;
+  }
+
+  p {
+    font-family: "Marhey", cursive;
+    font-size: 19px;
+    font-weight: 500;
+    color: rgb(54, 54, 54);
+  }
+
+  .contet-wrap h2 {
+    font-size: 55px;
+  }
+
+  .mess h2 {
+    font-size: 35px;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .mess {
+    width: 100%;
+    align-items: center;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+  }
+  .full {
+    width: 100%;
+    display: flex;
+  }
+  /* .mess img {
+    z-index: -1 !important;
+    mix-blend-mode: screen;
+  }
+  .mess .txt {
+    z-index: 555;
+    margin-top: 100px;
+    padding: 70px 20px;
+  } */
+}
+@media only screen and (max-width: 650px) {
+  .main {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .main .imge {
+    display: none !important;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    justify-content: center !important;
+  }
+  .contet-wrap {
+    padding: 20px 0;
+  }
+  .mess {
+    display: flex;
+
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .txt-show div h2 {
+    font-size: 45px;
+  }
+  /* .mess img {
+    z-index: -1 !important;
+    mix-blend-mode: screen;
+  }
+  .mess .txt {
+    z-index: 555;
+    margin-top: 100px;
+    padding: 70px 20px;
+  } */
 }
