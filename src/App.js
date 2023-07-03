@@ -24,6 +24,7 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Plx from "react-plx";
 
 function App() {
+  // const [position, setsetposition] = useState(false);
   const parallaxh1 = [
     {
       start: "self",
@@ -52,6 +53,28 @@ function App() {
       ],
     },
   ];
+  // const crosspostionhandel = () => {
+  //   setsetposition(true);
+  // };
+  // const parallaxcross = [
+  //   {
+  //     start: "self",
+  //     end: ".my-God-love",
+  //     properties: [
+  //       {
+  //         startValue: 0,
+  //         endValue: 500,
+  //         property: "translateX",
+  //         easing: "easeInCubic",
+  //       },
+  //       {
+  //         startValue: 0,
+  //         endValue: 10000,
+  //         property: "translatY",
+  //       },
+  //     ],
+  //   },
+  // ];
 
   const parallaxData = [
     {
@@ -90,23 +113,27 @@ function App() {
   //   // sety(latest);
   // });
   console.log("y" + y);
+
+
+
   useEffect(() => {
+    
     setTimeout(() => {
       sety(300);
       setx(0);
       sescal(0.3);
     }, 4000);
+
+
+window.scrollTo(0,0)
+
+setTimeout(() => {
+  window.scrollTo(0, 470);
+}, 5000);
+
   });
-  setTimeout(() => {
-    window.scrollTo(0, 470);
-  }, 5000);
-  // const scrollto = () => {
-  //   window.scrollTo({
-  //     top: 400,
-  //     behavior: "smooth",
-  //   });
-  // };
-  // const { ref } = useParallax({ speed: 30 });
+
+
   return (
     // <Parallax pages={3} style={{ top: "0", left: "0" }}>
     <div className="App">
@@ -149,20 +176,26 @@ function App() {
               <h1>طيب هو الرب للذين يترجونه، للنفس التي تطلبه</h1>
               <p>مراثي إرميا 3: 25</p>
             </motion.div>
-            <motion.div
-              // onClick={() => scrollto()}
-              initial={[{ x: x }, { y: y }, { opacity: 0 }, { scale: 0.5 }]}
-              animate={[{ x: x }, { y: y }, { opacity: 1, scale: scal }]}
-              // onChange={scrollY}
-              transition={{
-                duration: 0.9,
-                delay: 1,
-                ease: [0, 0.71, 0.2, 1.01],
-              }}
-              className="content-cross"
-            >
-              <img src="https://clipart-library.com/img/1291798.gif" alt="" />
-            </motion.div>
+            {/* <Plx
+              onPlxStart={() => crosspostionhandel()}
+              parallaxData={parallaxcross}
+            > */}
+              <motion.div
+             
+                // onClick={() => scrollto()}
+                initial={[{ x: x }, { y: y }, { opacity: 0 }, { scale: 0.5 }]}
+                animate={[{ x: x }, { y: y }, { opacity: 1, scale: scal }]}
+                // onChange={scrollY}
+                transition={{
+                  duration: 0.9,
+                  delay: 1,
+                  ease: [0, 0.71, 0.2, 1.01],
+                }}
+                className="content-cross"
+              >
+                <img src="https://clipart-library.com/img/1291798.gif" alt="" />
+              </motion.div>
+            {/* </Plx> */}
           </div>
 
           <motion.div
