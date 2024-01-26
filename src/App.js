@@ -1,22 +1,15 @@
 import "./App.css";
-import {
-  motion,
-  useScroll,
-  useMotionValue,
-  useMotionValueEvent,
-  useVelocity,
-  useViewportScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 // import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Atropos from "atropos/react";
 
-import img1 from "././prallex-img/4de9c8e4637c2c323004099b23429b0e.jpg";
-import img2 from "././prallex-img/5af72b6001ad3447b434829ebeb1e7a6.jpg";
-import img3 from "././prallex-img/1e7ca6d46ee69668a5905a7a354d6495.jpg";
-import img4 from "././prallex-img/4ae808074fe4b61a5ece8e5220af3c71.jpg";
-import img5 from "././prallex-img/9e694a4f533a7a442edb0f6830eb0a13.jpg";
-import vid from "././prallex-img/vid.mp4";
+import img1 from "./images/4de9c8e4637c2c323004099b23429b0e.jpg";
+import img2 from "./images/5af72b6001ad3447b434829ebeb1e7a6.jpg";
+import img3 from "./images/1e7ca6d46ee69668a5905a7a354d6495.jpg";
+import img4 from "./images/4ae808074fe4b61a5ece8e5220af3c71.jpg";
+import cross from "./images/cross.gif";
+// import img5 from "././prallex-img/9e694a4f533a7a442edb0f6830eb0a13.jpg";
+import vid from "./images/vid.mp4";
 import { useEffect, useRef, useState } from "react";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useParallax } from "react-scroll-parallax";
@@ -105,34 +98,28 @@ function App() {
   // const { scrollY } = useScroll();
   const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, [0, 2], [1, 2]);
-  console.log(scrollYProgress);
+  // console.log(scrollYProgress);
   // const scrollVelocity = useVelocity(scale);
 
   // useMotionValueEvent(scrollY, "change", (latest) => {
   //   console.log("Page scroll: ", latest);
   //   // sety(latest);
   // });
-  console.log("y" + y);
-
-
+  // console.log("y" + y);
 
   useEffect(() => {
-    
     setTimeout(() => {
       sety(300);
       setx(0);
       sescal(0.3);
-    }, 4000);
+    }, 3000);
 
+    window.scrollTo(0, 0);
 
-window.scrollTo(0,0)
-
-setTimeout(() => {
-  window.scrollTo(0, 470);
-}, 5000);
-
+    // setTimeout(() => {
+    //   window.scrollTo(0, 470);
+    // }, 5000);
   });
-
 
   return (
     // <Parallax pages={3} style={{ top: "0", left: "0" }}>
@@ -141,7 +128,10 @@ setTimeout(() => {
         <div className="logo">LOGO</div>
         <ul>
           <li>
-            <a href="https://gerges.ghaly.surge.sh/#/about" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/gerges-ghaly-9455b3224/"
+              target="_blank"
+            >
               {" "}
               ABOUT
             </a>
@@ -180,21 +170,20 @@ setTimeout(() => {
               onPlxStart={() => crosspostionhandel()}
               parallaxData={parallaxcross}
             > */}
-              <motion.div
-             
-                // onClick={() => scrollto()}
-                initial={[{ x: x }, { y: y }, { opacity: 0 }, { scale: 0.5 }]}
-                animate={[{ x: x }, { y: y }, { opacity: 1, scale: scal }]}
-                // onChange={scrollY}
-                transition={{
-                  duration: 0.9,
-                  delay: 1,
-                  ease: [0, 0.71, 0.2, 1.01],
-                }}
-                className="content-cross"
-              >
-                <img src="https://clipart-library.com/img/1291798.gif" alt="" />
-              </motion.div>
+            <motion.div
+              // onClick={() => scrollto()}
+              initial={[{ x: x }, { y: y }, { opacity: 0 }, { scale: 0.5 }]}
+              animate={[{ x: x }, { y: y }, { opacity: 1, scale: scal }]}
+              // onChange={scrollY}
+              transition={{
+                duration: 0.9,
+                delay: 1,
+                ease: [0, 0.71, 0.2, 1.01],
+              }}
+              className="content-cross"
+            >
+              <img src={cross} alt="" />
+            </motion.div>
             {/* </Plx> */}
           </div>
 
