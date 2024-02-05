@@ -1,6 +1,5 @@
 import "./App.css";
 import { motion, useScroll, useTransform } from "framer-motion";
-// import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Atropos from "atropos/react";
 
 import img1 from "./images/4de9c8e4637c2c323004099b23429b0e.jpg";
@@ -9,12 +8,13 @@ import img3 from "./images/1e7ca6d46ee69668a5905a7a354d6495.jpg";
 import img4 from "./images/4ae808074fe4b61a5ece8e5220af3c71.jpg";
 import cross from "./images/cross.gif";
 // import img5 from "././prallex-img/9e694a4f533a7a442edb0f6830eb0a13.jpg";
-import vid from "./images/vid.mp4";
 import { useEffect, useRef, useState } from "react";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useParallax } from "react-scroll-parallax";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Plx from "react-plx";
+import ParalexSection from "./ParalexSection";
+// import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
 function App() {
   // const [position, setsetposition] = useState(false);
@@ -69,20 +69,6 @@ function App() {
   //   },
   // ];
 
-  const parallaxData = [
-    {
-      start: 0,
-      end: 500,
-      properties: [
-        {
-          startValue: 0.8,
-          endValue: 1,
-          property: "scale",
-          easing: [0.25, 0.1, 0.53, 3],
-        },
-      ],
-    },
-  ];
 
   const [x, setx] = useState(0);
   const [y, sety] = useState(0);
@@ -200,7 +186,43 @@ function App() {
         </motion.div>
       </div>
 
-      <div className="hero container">
+<ParalexSection/>
+      {/* <div className="hero container">
+
+
+
+
+
+
+      <Parallax pages={4}>
+
+        <ParallaxLayer sticky={{ start: 1, end: 3 }} >
+          <div >
+            <p>I'm a sticky layer</p>
+          </div>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={1.5} speed={1.5} >
+          <div>
+            <p>I'm not</p>
+          </div>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={2.5} speed={1.5} >
+          <div >
+            <p>Neither am I</p>
+          </div>
+        </ParallaxLayer>
+      </Parallax>
+   
+
+
+
+
+
+
+
+        
         <Plx parallaxData={parallaxData}>
           <div className="vid-wrap ">
             <video width="" height="" autoPlay muted loop>
@@ -233,7 +255,7 @@ function App() {
             </div>
           </Plx>
         </div>
-      </div>
+      </div> */}
 
       <div className="txt-show">
         <div
