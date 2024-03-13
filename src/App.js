@@ -1,23 +1,24 @@
 import "./App.css";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Atropos from "atropos/react";
+import img4 from "./images/428655918_122110066796219529_8065268670703962416_n.jpg";
+import img5 from "./images/acoustic-guitar-146262_1280.webp";
+import img10 from "./images/guitar-47463_1280.png";
+import img6 from "./images/man-5994283_1280.webp";
+import img7 from "./images/facebook-371641_1280.png";
+import img8 from "./images/instagram-2433265_1280.png";
+import sound from "./images/Facebook_4.mp3";
+import vid from "./images/FDownloader.net-2095304857521303-(540p).mp4";
+import poster from "./images/Capture.PNG";
+import logo from "./images/428485540_122108112062219529_7526832429280503665_n.png";
+import header from "./images/425290509_122108139056219529_1187996236164005691_n.jpg";
+import price from "./images/425386423_122108139038219529_9097415563852443380_n.jpg";
 
-import img1 from "./images/4de9c8e4637c2c323004099b23429b0e.jpg";
-import img2 from "./images/5af72b6001ad3447b434829ebeb1e7a6.jpg";
-import img3 from "./images/1e7ca6d46ee69668a5905a7a354d6495.jpg";
-import img4 from "./images/4ae808074fe4b61a5ece8e5220af3c71.jpg";
-import cross from "./images/cross.gif";
-// import img5 from "././prallex-img/9e694a4f533a7a442edb0f6830eb0a13.jpg";
 import { useEffect, useRef, useState } from "react";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useParallax } from "react-scroll-parallax";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Plx from "react-plx";
-import ParalexSection from "./ParalexSection";
-// import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
 function App() {
-  // const [position, setsetposition] = useState(false);
+
   const parallaxh1 = [
     {
       start: "self",
@@ -46,52 +47,12 @@ function App() {
       ],
     },
   ];
-  // const crosspostionhandel = () => {
-  //   setsetposition(true);
-  // };
-  // const parallaxcross = [
-  //   {
-  //     start: "self",
-  //     end: ".my-God-love",
-  //     properties: [
-  //       {
-  //         startValue: 0,
-  //         endValue: 500,
-  //         property: "translateX",
-  //         easing: "easeInCubic",
-  //       },
-  //       {
-  //         startValue: 0,
-  //         endValue: 10000,
-  //         property: "translatY",
-  //       },
-  //     ],
-  //   },
-  // ];
-
 
   const [x, setx] = useState(0);
   const [y, sety] = useState(0);
   const [scal, sescal] = useState(1);
-  // const scroll =useScroll(
-  //   sety(500),
-  //     setx(500)
-  // );
-  // const handelscroll = () => {
-  //   sety(500);
-  //   setx(500);
-  // };
-  // const { scrollY } = useScroll();
   const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, [0, 2], [1, 2]);
-  // console.log(scrollYProgress);
-  // const scrollVelocity = useVelocity(scale);
-
-  // useMotionValueEvent(scrollY, "change", (latest) => {
-  //   console.log("Page scroll: ", latest);
-  //   // sety(latest);
-  // });
-  // console.log("y" + y);
 
   useEffect(() => {
     setTimeout(() => {
@@ -101,22 +62,32 @@ function App() {
     }, 3000);
 
     window.scrollTo(0, 0);
-
-    // setTimeout(() => {
-    //   window.scrollTo(0, 470);
-    // }, 5000);
   });
 
+  const [playing, setPlaying] = useState(false);
+
+  let audio = new Audio(sound);
+
+  const Toggle = () => {
+    setPlaying(!playing);
+
+    audio.play();
+  };
+  const pauseAudio = () => {
+    audio.pause();
+  };
+
   return (
-    // <Parallax pages={3} style={{ top: "0", left: "0" }}>
     <div className="App">
-      <div className="header container">
-        <div className="logo">LOGO</div>
+      <div className="header ">
+        <div className="logo">
+          <img src={logo} alt="" />
+        </div>
         <ul>
           <li>
             <a
-              href="https://www.linkedin.com/in/gerges-ghaly-9455b3224/"
-              target="_blank"
+              href="https://www.facebook.com/profile.php?id=61556585890389"
+              target="blank"
             >
               {" "}
               ABOUT
@@ -125,137 +96,70 @@ function App() {
         </ul>
       </div>
 
-      <div className="home container">
+      <div className="home ">
         <motion.div
           className="main"
           style={{
             scale,
           }}
         >
-          <motion.div
-            initial={[{ y: 100 }, { opacity: 0 }]}
-            animate={[{ y: 0 }, { opacity: 1 }]}
-            transition={{ ease: "easeOut", duration: 0.7 }}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 1.01 }}
-            className="imge"
-          >
-            <img src={img1} alt="" />
-          </motion.div>
+          <div className="main buttns-wraper">
+            <motion.div
+              initial={[{ y: 100 }, { opacity: 0 }]}
+              animate={[{ y: 0 }, { opacity: 1 }]}
+              transition={{ ease: "easeOut", duration: 0.9 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 1.01 }}
+              className="imge rounded"
+            >
+              {/* <ReactAudioPlayer src={sound} /> */}
+              <a className="play-btn-mp3" href="#" onClick={Toggle}></a>
+            </motion.div>
+            <motion.div
+              initial={[{ y: 100 }, { opacity: 0 }]}
+              animate={[{ y: 0 }, { opacity: 1 }]}
+              transition={{ ease: "easeOut", duration: 0.5 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 1.01 }}
+              className="imge rounded"
+            >
+              <img src={header} alt="" />
+            </motion.div>
+          </div>
           <div className="content">
             <motion.div
               initial={[{ y: -100 }, { opacity: 0 }]}
               animate={[{ y: 0 }, { opacity: 1 }]}
-              transition={{ ease: "easeOut", duration: 1.5, delay: 1.7 }}
+              transition={{ ease: "easeOut", duration: 1.5, delay: 1.5 }}
               className="content-text"
             >
-              <h1>طيب هو الرب للذين يترجونه، للنفس التي تطلبه</h1>
-              <p>مراثي إرميا 3: 25</p>
+              <h1>Guitar With Hany</h1>
+              {/* <p>مراثي إرميا 3: 25</p> */}
             </motion.div>
-            {/* <Plx
-              onPlxStart={() => crosspostionhandel()}
-              parallaxData={parallaxcross}
-            > */}
             <motion.div
-              // onClick={() => scrollto()}
-              initial={[{ x: x }, { y: y }, { opacity: 0 }, { scale: 0.5 }]}
-              animate={[{ x: x }, { y: y }, { opacity: 1, scale: scal }]}
-              // onChange={scrollY}
-              transition={{
-                duration: 0.9,
-                delay: 1,
-                ease: [0, 0.71, 0.2, 1.01],
-              }}
-              className="content-cross"
+              initial={[{ y: 100 }, { opacity: 0 }]}
+              animate={[{ y: 0 }, { opacity: 1 }]}
+              transition={{ ease: "easeOut", duration: 0.7, delay: 0.4 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 1.01 }}
+              className="imge guitar"
             >
-              <img src={cross} alt="" />
+              <img src={img5} alt="" />
             </motion.div>
-            {/* </Plx> */}
+            <motion.div
+              initial={[{ y: -100 }, { opacity: 0 }]}
+              animate={[{ y: 0 }, { opacity: 1 }]}
+              transition={{ ease: "easeOut", duration: 1.5, delay: 1.2 }}
+              className="content-text"
+            >
+              <h2>
+                My name is Hany, and I have 11 years of experience in playing
+                music as a professional guitarist.
+              </h2>
+            </motion.div>
           </div>
-
-          <motion.div
-            initial={[{ y: 100 }, { opacity: 0 }]}
-            animate={[{ y: 0 }, { opacity: 1 }]}
-            transition={{ ease: "easeOut", duration: 0.7, delay: 0.4 }}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 1.01 }}
-            className="imge"
-          >
-            <img src={img2} alt="" />
-          </motion.div>
         </motion.div>
       </div>
-
-<ParalexSection/>
-      {/* <div className="hero container">
-
-
-
-
-
-
-      <Parallax pages={4}>
-
-        <ParallaxLayer sticky={{ start: 1, end: 3 }} >
-          <div >
-            <p>I'm a sticky layer</p>
-          </div>
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={1.5} speed={1.5} >
-          <div>
-            <p>I'm not</p>
-          </div>
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={2.5} speed={1.5} >
-          <div >
-            <p>Neither am I</p>
-          </div>
-        </ParallaxLayer>
-      </Parallax>
-   
-
-
-
-
-
-
-
-        
-        <Plx parallaxData={parallaxData}>
-          <div className="vid-wrap ">
-            <video width="" height="" autoPlay muted loop>
-              <source src={vid} type="" />
-            </video>
-          </div>
-        </Plx>
-
-        <div className="contet-wrap">
-          <Plx parallaxData={parallaxData}>
-            <div>
-              <h2>يا الله إلهي</h2>
-              <p>
-                يا الله، إلهي أنت. إليك أبكر. عطشت إليك نفسي، يشتاق إليك جسدي في
-                أرض ناشفة ويابسة بلا ماء، لكي أبصر قوتك ومجدك. كما قد رأيتك في
-                قدسك. لأن رحمتك أفضل من الحياة. شفتاي تسبحانك. هكذا أباركك في
-                حياتي. باسمك أرفع يدي. كما من شحم ودسم تشبع نفسي، وبشفتي
-                الابتهاج يسبحك فمي.
-              </p>
-            </div>
-          </Plx>
-          <Plx parallaxData={parallaxData}>
-            <div>
-              <h2>الرب راعي</h2>
-              <p>
-                الرب راعي فلا يعوزني شيء في مراع خضر يربضني . إلى مياه الراحة
-                يوردني يرد نفسي. يهديني إلى سبل البر من أجل اسمه أيضا إذا سرت في
-                وادي ظل الموت لا أخاف شرا، لأنك أنت معي.
-              </p>
-            </div>
-          </Plx>
-        </div>
-      </div> */}
 
       <div className="txt-show">
         <div
@@ -266,7 +170,7 @@ function App() {
           }}
         >
           <Plx parallaxData={parallaxh1}>
-            <h2>God is Good </h2>
+            <h2>Guitar With Hany</h2>
           </Plx>
         </div>
 
@@ -279,14 +183,24 @@ function App() {
           }}
         >
           <Plx parallaxData={parallaxh2}>
-            <h2>الرب صالح </h2>
+            <h2> جيتار مع هانى </h2>
           </Plx>
         </div>
       </div>
 
       <div className="my-God-love container">
-        <div className="mess revers">
+        <div className="mess ">
+          <div className="txt">
+            <h2>
+              شايف الجيتار صعب ومش مفهوم!! هتعزف 🎼🔥🎸 شايف الجيتار كله نظريات
+              ومعادلات وأساليب عزف كتير وانواع كتير وحاجات لخبطه!! برضه هتعزف
+              🔥❤️ بقدملك خبره ١١ سنه في مجال الموسيقي وهبذل كل جهدي اني اخليك
+              تعزف وتلحن كمان 🥰🎼 وكمان اول حصتين جيتار هيكونوا مجانا 😍 🤝
+              هنكون بناخد الدروس اونلاين للي مش متوفر عنده مكان 🎧💻
+            </h2>
+          </div>
           <motion.div
+            className="mess-image-wrapper"
             initial={[{ y: 50 }]}
             animate={[{ y: 0 }]}
             transition={{
@@ -295,15 +209,12 @@ function App() {
               repeatType: "reverse",
             }}
           >
-            <img src={img3} alt="" />
+            <img src={img10} alt="" />
           </motion.div>
-
-          <div className="txt">
-            <h2>تعالوا إلي يا جميع المتعبين والثقيلي الأحمال، وأنا أريحكم</h2>
-          </div>
         </div>
         <div className="mess">
           <motion.div
+            className="mess-image-wrapper"
             initial={[{ y: 50 }]}
             animate={[{ y: 0 }]}
             transition={{
@@ -314,18 +225,115 @@ function App() {
           >
             <img src={img4} alt="" />
           </motion.div>
-          <div>
-            <h2>محبة أبدية أحببتك، من أجل ذلك أدمت لك الرحمة</h2>
+          <div className="txt">
+            <h2>
+              My name is Hany Kamal, and I have been passionate about music
+              since my childhood. I have learned music from lots of sources, and
+              I have been playing guitar for more than 11 years. I can play
+              different music styles, like Eastern, Spanish, jazz, rock,
+              classics and blues, etc. And it's going to be a pleasure for me to
+              answer any questions. I really love all of you. ♥️😍✨️
+            </h2>
           </div>
         </div>
+      </div>
+
+      <div className="mess">
+        <div className="txt">
+          <h2>
+            هنبسط كل المواضيع وهنتعلم مدارس مختلفه من الموسيقي شرقي وغربي جاز
+            وروك وبلوز وكلاسيك.🎼♥️✨️ هنتعلم فينجر ستايل وتكنيكس مختلفه.🎹🎼
+            هناخد فيديوهات تكون بتراجع علي الي اخدناه انا هكون بقدم فيها الي
+            اخذناه في الدرس ببساطه.🎤💻📷 هناخد pdf برضه يكون بيشرح كل حاجه
+            اخدناها.💽 طبعا مع متابعه مستمره وسنده للآخر في رحله التعليم.📞
+          </h2>
+        </div>
+        <motion.div
+          className="mess-image-wrapper"
+          initial={[{ y: 50 }]}
+          animate={[{ y: 0 }]}
+          transition={{
+            repeat: Infinity,
+            duration: 5,
+            repeatType: "reverse",
+          }}
+        >
+          <img src={price} alt="" />
+        </motion.div>
+      </div>
+
+      <div className="container Atropos-warper">
+        <h2 className="offer-in-english">
+          Contact now and ask about our offers
+        </h2>
+
         <Atropos shadow={false} rotateYMax={5} rotateXMax={12}>
           <div className="mess full">
-            <h2>يا أولادي، لا نحب بالكلام ولا باللسان، بل بالعمل والحق!</h2>
+            <h2>
+              {" "}
+              حاسس بيك يالي عاوز تتعلم جيتار 😁😍😇 عملتلك اول درسين ببلاش🥰
+              🤯😎🥳🥳🥳🥳 ولكل الاعمار 😍🥳🤩
+            </h2>
+            <motion.div
+              initial={[{ scale: 1 }]}
+              animate={[{ scale: 0.8 }]}
+              transition={{
+                repeat: Infinity,
+                duration: 0.7,
+                repeatType: "reverse",
+              }}
+              className="contact-us-whats"
+            >
+              <a href="whatsapp://send?phone=+21227008220" target="blank">
+                <img src={img6} alt="" />
+              </a>
+            </motion.div>
           </div>
         </Atropos>
       </div>
+
+      <div className=" contact-us">
+        <div className="vid-wrap ">
+          <video
+            onClick={pauseAudio}
+            width=""
+            height=""
+            poster={poster}
+            controls
+          >
+            <source src={vid} type="" />
+          </video>
+        </div>
+        <div className="contact-us-icons">
+          <h2 className="offer-in-english">
+            Follow us on social media to know everything new
+          </h2>
+          <div className="contact-us-icons-img">
+            <div>
+              <a
+                href="https://www.facebook.com/profile.php?id=61556585890389"
+                target="blank"
+              >
+                <img src={img7} alt="" />
+              </a>
+            </div>
+
+            <div>
+              <a
+                target="blank"
+                href="https://www.instagram.com/hany.k_adly?fbclid=IwAR1Zt0v-qLW6aYSmA9hWbE_53gmXdvAffI4WYth-2TEmmWq1Y5Urd4eEMaI"
+              >
+                <img src={img8} alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="foter">
-        <p>Gerges Ghaly </p>
+        <a href="https://www.facebook.com/gerges.ghaly.35" target="blank">
+          <p>Gerges Ghaly </p>
+        </a>
         <span>&#9829;</span>
       </div>
     </div>
